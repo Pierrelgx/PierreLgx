@@ -7,4 +7,3 @@
 
 ```🟢 |Ruby, html, css|  For now```
 
-🟢 Fan de Star_Wars
