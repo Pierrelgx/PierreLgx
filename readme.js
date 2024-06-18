@@ -1,9 +1,9 @@
 module.exports = `
-# My Project
+# Mon Profil
 
-Today is: <#today_date>
+Je code depuis maintenant <#variable_duree> ;
 
-There are <#day_before_new_years> until New Year's Day.
+J'ai actuellement <#variable_age> ;
 
-<#gabot_signing>
+Et je suis d'humeur <#mood>.
 `;
