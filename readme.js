@@ -6,4 +6,6 @@ J'ai commendé ma touuuuute première ligne de code depuis très exactement <#va
 J'ai actuellement <#variable_age> ;
 
 Et je suis d'humeur <#mood>.
+
+Et du coup on va voir si ça pousse !
 `;
