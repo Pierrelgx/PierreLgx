@@ -1,17 +1,17 @@
-name: Update README daily at 10:01
+name: Update README daily at 10:32
 
 on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: '01 08 * * *' 
+    - cron: '32 10 * * *'
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [14.x]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -20,11 +20,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Update README.md file
         run: |
-          node index.js
+          node index.js > README.md
         env:
           CI: true
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9
+      - name: commit changes
+        uses: EndBug/add-and-commit@v4
         with:
           author_name: Pierrooow
           author_email: hello@pierrelegoux.fr
