@@ -7,4 +7,3 @@ J'ai actuellement <#variable_age> ;
 
 Et je suis d'humeur <#mood>.
 `;
- 

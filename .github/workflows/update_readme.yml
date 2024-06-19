@@ -1,10 +1,10 @@
-name: Update README daily at 08:06
+name: Update README daily at 09:30
 
 on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: '06 08 * * *'
+    - cron: '30 9 * * *'
 
 jobs:
   update-readme:
@@ -20,10 +20,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Update README.md file
         run: |
-          node index.js > README.md
+          node index.js
         env:
           CI: true
-      - name: commit changes
+      - name: Commit changes
         uses: EndBug/add-and-commit@v4
         with:
           author_name: Pierrooow
@@ -34,4 +34,3 @@ jobs:
         env:
           # This is necessary in order to push a commit to the repo
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-  
