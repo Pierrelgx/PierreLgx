@@ -18,9 +18,9 @@ function generateNewREADME() {
   }
 
   const identifierToUpdate = {
-    variable_duree: getCodingDuration(),
-    variable_age: getCurrentAge(),
-    mood: getMood(),
+    day_before_new_years: getDBNWSentence(),
+    today_date: getTodayDate(),
+    gabot_signing: getGabotSigning(),
   };
 
   Object.entries(identifierToUpdate).forEach(([key, value]) => {
@@ -30,22 +30,42 @@ function generateNewREADME() {
   return readmeRow.join('\n');
 }
 
-function getCodingDuration() {
-  const startCodingDate = new Date('2022-01-01');
-  const diffInMs = today - startCodingDate;
-  const diffInDays = Math.floor(diffInMs / msInOneDay);
-  return `${diffInDays} jours`;
+const moodByDay = {
+  1: 'hate',
+  2: 'wickedness',
+  3: 'pleasure',
+  4: 'wickedness',
+  5: 'cruelty',
+  6: 'horror',
+  7: 'love',
+};
+
+function getGabotSigning() {
+  const mood = moodByDay[today.getDay() + 1];
+  return `🤖 This README.md is updated with ${mood}, by Gabot ❤️`;
 }
 
-function getCurrentAge() {
-  const birthDate = new Date('1993-07-20');
-  const ageInMs = today - birthDate;
-  const ageDate = new Date(ageInMs);
-  return `${Math.abs(ageDate.getUTCFullYear() - 1970)} ans`;
+function getTodayDate() {
+  return today.toDateString();
 }
 
-function getMood() {
-  return "joviaaaaale";
+function getMySelf() {
+  // test if we are in a PAIR DAY
+  return today.getDate() % 2 === 0
+    ? Math.floor(Math.random() * 2)
+      ? 'penguin 🐧'
+      : 'bear 🐻'
+    : 'penguin bear 🐧🐻';
+}
+
+function getDBNWSentence() {
+  const nextYear = today.getFullYear() + 1;
+  const nextYearDate = new Date(String(nextYear));
+
+  const timeUntilNewYear = nextYearDate.getTime() - today.getTime();
+  const dayUntilNewYear = Math.round(timeUntilNewYear / msInOneDay);
+
+  return `**${dayUntilNewYear} day before ${nextYear} ⏱**`;
 }
 
 const findIdentifierIndex = (rows, identifier) =>
