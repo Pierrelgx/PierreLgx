@@ -7,5 +7,5 @@ J'ai actuellement <#variable_age> ;
 
 Et je suis d'humeur <#mood>.
 
-Et du coup on va voir si on est bien vendredi 21 aujourd'hui !
+Nous sommes le Mardi 25 Juin 2024 maggle
 `;
