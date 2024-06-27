@@ -7,5 +7,5 @@ J'ai actuellement <#variable_age> ;
 
 Et je suis d'humeur <#mood>.
 
-Nous sommes le Mardi 25 Juin 2024 maggle
+Nous sommes le Jeudi 27 Juin 2024 maggle
 `;
